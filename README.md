@@ -1,73 +1,102 @@
-# Enterprise Active Directory & Windows Server Infrastructure Lab
+# Enterprise Active Directory & Windows Server 2025 Homelab
 
-**Technologies:** Windows Server 2025 | Active Directory | Windows 11 | VMware | NTFS Permissions | File Services
+**Technologies:** Windows Server 2025 | Active Directory | Windows 11 | VMware | File Services | Access Control
 
 ## Project Overview
 
-Designed and deployed a virtualized Windows infrastructure environment to simulate core enterprise IT operations, including centralized identity administration, domain authentication, network file sharing, and access control.
+Designed and deployed a virtualized Windows enterprise environment using VMware to demonstrate hands-on experience with centralized identity management, domain administration, network file sharing, and access control.
 
-The environment consists of two VMware virtual machines:
+The infrastructure consists of two virtual machines:
 
-- **Windows Server 2025:** Configured as an Active Directory Domain Controller and Windows File Server.
-- **Windows 11:** Domain-joined workstation used to validate domain connectivity, authentication, and file access permissions.
+- **Windows Server 2025:** Domain Controller, Active Directory Domain Services (AD DS), DNS, and File Server.
+- **Windows 11:** Domain-joined client workstation used to validate authentication, network connectivity, and resource access.
 
-## 1. Active Directory Deployment & Administration
+## 1. Windows Server & Active Directory Deployment
 
-- Deployed Active Directory Domain Services (AD DS) and promoted Windows Server 2025 to a Domain Controller.
-- Established a centralized directory environment for managing domain identities and resources.
-- Created and structured Organizational Units (OUs) and user accounts to simulate enterprise identity administration.
+- Installed and configured Windows Server 2025 within VMware.
+- Deployed Active Directory Domain Services and promoted the server to a Domain Controller.
+- Configured domain infrastructure to support centralized authentication and identity administration.
 
-**Active Directory Configuration**
+**Windows Server Configuration**
 
-![Active Directory](screenshots/02-domain-controller.png)
+![Windows Server Overview](Screenshots/01-server-overview.png)
 
-**Organizational Units & User Management**
+**Domain Controller**
 
-![Organizational Units](screenshots/03-organizational-units.png)
+![Domain Controller](Screenshots/02-domain-controller.png)
 
-![Domain Users](screenshots/04-domain-users.png)
+**DNS Configuration**
 
-## 2. Windows 11 Domain Integration
+![DNS Configuration](Screenshots/03-dns-configuration.png)
 
-- Provisioned a Windows 11 virtual machine and configured communication with the Domain Controller.
-- Successfully joined the workstation to the Active Directory domain.
-- Validated domain connectivity and access to shared network resources.
+## 2. Identity & Access Management
 
-**Domain-Joined Workstation**
+- Created and organized Active Directory Organizational Units (OUs) to simulate departmental structures.
+- Provisioned domain user accounts and configured security groups to support identity administration.
+- Established a structured directory environment for managing user identities and access permissions.
 
-![Domain Integration](screenshots/05-windows11-domain.png)
+**Organizational Units**
 
-## 3. File Server Configuration & Access Control
+![Organizational Units](Screenshots/04-organizational-units.png)
 
-- Configured Windows file-sharing services on the Windows Server 2025 virtual machine.
-- Established shared directories and assigned user-specific access permissions.
-- Configured file-sharing and NTFS permissions to enforce authorized resource access.
-- Conducted access validation from the Windows 11 client to verify that authorized users received appropriate access and restricted users were denied.
+**Domain User Accounts**
 
-**File Server Configuration**
+![Domain Users](Screenshots/05-domain-users.png)
 
-![File Server](screenshots/07-file-server.png)
+**Security Groups**
 
-**File Permissions**
+![Security Groups](Screenshots/06-security-groups.png)
 
-![File Permissions](screenshots/09-file-permissions.png)
+## 3. Windows 11 Domain Integration
 
-**Access Control Validation**
+- Deployed a Windows 11 virtual machine within the VMware environment.
+- Joined the workstation to the Active Directory domain.
+- Verified domain connectivity and authenticated access to network resources.
 
-![Authorized Access](screenshots/10-authorized-access.png)
+## 4. File Server & Access Control
 
-![Access Denied](screenshots/11-access-denied.png)
+- Configured Windows file-sharing services on Windows Server 2025.
+- Created shared directories and established share-level and NTFS permissions.
+- Assigned access rights to domain users and groups to control resource availability.
+- Tested permissions from the Windows 11 client to verify authorized and restricted access.
 
-## Technical Competencies Demonstrated
+**Shared Folder Configuration**
 
-- **Systems Administration:** Windows Server deployment, configuration, and management.
-- **Identity & Access Management:** Active Directory, domain authentication, user provisioning, and organizational unit administration.
-- **Infrastructure & Networking:** VMware virtualization, client-server connectivity, and domain integration.
-- **Security Administration:** NTFS permissions, shared resource authorization, and access control validation.
-- **Troubleshooting:** Windows networking, domain connectivity, and permission verification.
+![Shared Folders](Screenshots/07-shared-folders.png)
+
+**Share Permissions**
+
+![Share Permissions](Screenshots/08-share-permissions.png)
+
+**NTFS Permissions**
+
+![NTFS Permissions](Screenshots/09-ntfs-permissions.png)
+
+## 5. Security Validation & Testing
+
+Performed access control testing using domain user accounts with different permission levels to verify that security restrictions were properly enforced.
+
+- **Authorized Access:** Confirmed permitted users could access assigned network resources.
+- **Unauthorized Access:** Verified restricted users were denied access to protected resources.
+
+**Authorized User Test**
+
+![Authorized User Test](Screenshots/10-authorized-user-test.png)
+
+**Unauthorized User Test**
+
+![Unauthorized User Test](Screenshots/11-unauthorized-user-test.png)
+
+## Technical Skills Demonstrated
+
+- **Systems Administration:** Windows Server 2025, server roles, and infrastructure configuration.
+- **Identity Management:** Active Directory, user provisioning, Organizational Units, and security groups.
+- **Networking:** VMware virtualization, DNS, domain integration, and client-server communication.
+- **Security:** NTFS permissions, share permissions, access control, and authorization testing.
+- **Troubleshooting:** Windows networking, domain connectivity, and resource access validation.
 
 ## Project Outcome
 
-Successfully implemented a functional Windows domain environment integrating centralized identity management, a domain-joined client workstation, and permission-controlled network file sharing.
+Successfully implemented a functional Active Directory environment integrating centralized user administration, a domain-joined Windows 11 workstation, and permission-controlled network file sharing.
 
-Validated system functionality through domain integration and user access testing, demonstrating practical experience with enterprise Windows infrastructure, identity administration, and security controls.
+Validated system functionality through authentication, network connectivity, and access control testing, demonstrating practical experience with enterprise Windows infrastructure and identity management.
